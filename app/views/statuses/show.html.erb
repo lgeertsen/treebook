@@ -2,13 +2,16 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @status.name %>
+  <%= @status.user.full_name %>
 </p>
 
 <p>
   <strong>Content:</strong>
   <%= @status.content %>
 </p>
-
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+<div class="col-md-2">
+  <%= link_to 'Edit', edit_status_path(@status), class: "btn btn-block btn-warning" %>
+</div>
+<div class="col-md-2">
+  <%= link_to 'Back', statuses_path, class: "btn btn-block btn-danger" %>
+</div>

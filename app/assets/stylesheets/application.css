@@ -15,5 +15,24 @@
  */
 
 body {
-  padding-top: 40px;
+  padding-top: 70px;
+}
+
+.navbar {
+  background-color: #2ECC71;
+  border-bottom: 4px solid #27AE60;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav li a {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+  background-color: #27AE60;
 }

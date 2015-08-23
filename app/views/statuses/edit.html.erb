@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @status %> |
-<%= link_to 'Back', statuses_path %>
+<div class="col-md-2">
+  <%= link_to 'Show', @status, class: "btn btn-block btn-warning" %>
+  <%= link_to 'Back', statuses_path, class: "btn btn-block btn-danger" %>
+</div>

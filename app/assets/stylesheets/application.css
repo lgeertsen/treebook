@@ -18,9 +18,49 @@ body {
   padding-top: 70px;
 }
 
-.navbar {
+/*.navbar {
   background-color: #2ECC71;
   border-bottom: 4px solid #27AE60;
+}*/
+
+.nav-green {
+  background-color: #2ECC71;
+  border-bottom: 4px solid #27AE60;
+}
+
+.nav-red {
+  background-color: #E74C3C;
+  border-bottom: 4px solid #C0392B;
+}
+
+.nav-yellow {
+  background-color: #F1C40F;
+  border-bottom: 4px solid #F39C12;
+}
+
+.nav-blue {
+  background-color: #3498DB;
+  border-bottom: 4px solid #2980B9;
+}
+
+.nav-orange {
+  background-color: #E67E22;
+  border-bottom: 4px solid #D35400;
+}
+
+.nav-purple {
+  background-color: #9B59B6;
+  border-bottom: 4px solid #8E44AD;
+}
+
+.nav-turquoise {
+  background-color: #1ABC9C;
+  border-bottom: 4px solid #16A085;
+}
+
+.nav-darkblue {
+  background-color: #34495E;
+  border-bottom: 4px solid #2C3E50;
 }
 
 .navbar-inverse .navbar-brand {

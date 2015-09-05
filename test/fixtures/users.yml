@@ -3,3 +3,9 @@ lee:
   last_name: "Geertsen"
   email: "lee.geertsen@hotmail.com"
   profile_name: "lgeertsen"
+
+jim:
+  first_name: "Jim"
+  last_name: "Hoskins"
+  email: "jim@teamtreehouse.com"
+  profile_name: "jimhoskins"

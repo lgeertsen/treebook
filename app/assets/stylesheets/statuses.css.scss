@@ -2,23 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.list-group {
+  padding-top: 15px;
+}
+
 .status {
-  border-bottom: solid 1px #ccc;
-  padding: 5px 0;
+  background-color: #ECF0F1;
+  color: #2C3E50;
 }
 
-.status p {
-  margin: 4px 0;
+.status h3,
+.status h5 {
+  font-weight: bold;
 }
 
-.status.hover {
-  background:  #FAFAFA;
-}
-
-.status .admin {
-  display: none;
-}
-
-.status.hover .admin {
-  display: inline;
+.status h5,
+.status h6 {
+  text-align: right;
 }

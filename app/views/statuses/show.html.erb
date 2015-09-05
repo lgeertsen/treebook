@@ -1,17 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @status.user.full_name %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @status.content %>
-</p>
-<div class="col-md-2">
-  <%= link_to 'Edit', edit_status_path(@status), class: "btn btn-block btn-warning" %>
-</div>
-<div class="col-md-2">
-  <%= link_to 'Back', statuses_path, class: "btn btn-block btn-danger" %>
+<div class="col-md-8 col-md-offset-2 well status">
+  <h6><%= time_ago_in_words(@status.created_at) %> ago</h6>
+  <p><%= @status.content %></p>
+  <h5><%= @status.user.full_name %></h5>
+  <hr />
+  <% if user_signed_in? %>
+    <% if current_user.id == @status.user.id %>
+      <%= link_to 'Edit', edit_status_path(@status), class: "btn btn-warning" %>
+    <% end %>
+  <% end %>
+  <%= link_to 'Back', statuses_path, class: "btn btn-danger" %>
 </div>

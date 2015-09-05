@@ -1,19 +1,35 @@
-<div class="page-header">
-  <h1>All of the Statuses</h1>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= link_to "Post a New Status", new_status_path, class: "btn btn-block btn-success" %>
+  </div>
 </div>
 
-<%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
-
-<% @statuses.each do |status| %>
-  <div class="status">
-    <strong><%= status.user.full_name %></strong>
-    <p><%= status.content %></p>
-    <div class="meta">
-      <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
-      <span class="admin">
-        | <%= link_to "Edit", edit_status_path(status) %> |
-        <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure you want to delete this status?"} %>
-      </span>
-    </div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <ul class="list-group">
+    <% @statuses.reverse_each do |status| %>
+      <li class="list-group-item status">
+        <h6><%= time_ago_in_words(status.created_at) %> ago</h6>
+        <p><%= status.content %></p>
+        <h5><%= link_to status.user.full_name, status.user.profile_name %></h5>
+        <hr />
+        <div class="row meta">
+          <div class="col-md-4">
+            <%= link_to 'Show', status, class: "btn btn-block btn-info" %>
+          </div>
+          <% if user_signed_in? %>
+            <% if current_user.id == status.user.id %>
+              <div class="col-md-4">
+                <%= link_to "Edit", edit_status_path(status), class: "btn btn-block btn-warning" %>
+              </div>
+              <div class="col-md-4">
+                <%= link_to "Delete", status, class: "btn btn-block btn-danger" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+    </ul>
   </div>
-<% end %>
+</div>

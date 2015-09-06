@@ -1,7 +1,10 @@
 <div class="col-md-8 col-md-offset-2 well status">
   <h6><%= time_ago_in_words(@status.created_at) %> ago</h6>
   <p><%= @status.content %></p>
-  <h5><%= @status.user.full_name %></h5>
+  <div class="user">
+    <h5><%= link_to @status.user.full_name, "/#{@status.user.profile_name}" %></h5>
+    <%= image_tag @status.user.gravatar_url %>
+  </div>
   <hr />
   <% if user_signed_in? %>
     <% if current_user.id == @status.user.id %>

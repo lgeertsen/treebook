@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <div class="status">
+    <div class="user">
+      <h5><%= link_to @status.user.full_name, "/#{@status.user.profile_name}" %></h5>
+      <%= image_tag @status.user.gravatar_url %>
+    </div>
+  </div>
+
   <div class="form-group">
     <%= f.hidden_field :user_id, value: current_user.id, class: "form-control" %>
   </div>

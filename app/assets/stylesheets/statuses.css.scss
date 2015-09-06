@@ -20,3 +20,24 @@
 .status h6 {
   text-align: right;
 }
+
+.status h5 {
+  display: inline-block;
+}
+
+.status img {
+  border-radius: 50%;
+  width: 40px;
+  border: 2px solid #2ECC71;
+}
+
+.status div.user {
+  float: right;
+  padding-bottom: 15px;
+}
+
+.status div.user:after {
+  content: "";
+  display: table;
+  clear: both;
+}

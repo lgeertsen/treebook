@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="status">
-    <div class="user">
-      <h5><%= link_to @status.user.full_name, "/#{@status.user.profile_name}" %></h5>
-      <%= image_tag @status.user.gravatar_url %>
+    <div class="pull-right">
+      <h5><%= link_to current_user.full_name, "/#{current_user.profile_name}" %></h5>
+      <%= image_tag current_user.gravatar_url %>
     </div>
   </div>
 

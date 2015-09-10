@@ -63,6 +63,10 @@ body {
   border-bottom: 4px solid #2C3E50;
 }
 
+.navbar-inverse .navbar-collapse {
+    border-color: #27AE60;
+}
+
 .navbar-inverse .navbar-brand {
   color: #fff;
   font-size: 24px;

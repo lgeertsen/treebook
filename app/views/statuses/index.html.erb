@@ -11,7 +11,7 @@
       <li class="list-group-item status">
         <h6><%= time_ago_in_words(status.created_at) %> ago</h6>
         <p><%= status.content %></p>
-        <div class="user">
+        <div class="pull-right">
           <h5><%= link_to status.user.full_name, "/#{status.user.profile_name}" %></h5>
           <%= image_tag status.user.gravatar_url %>
         </div>

@@ -29,13 +29,23 @@ class StatusesControllerTest < ActionController::TestCase
     assert_redirected_to new_user_session_path
   end
 
-  test "should create status" do
+  test "should create status when logged in" do
     sign_in users(:lee)
     assert_difference('Status.count') do
       post :create, status: { content: @status.content }
     end
 
     assert_redirected_to status_path(assigns(:status))
+  end
+
+  test "should create status current user when logged in" do
+    sign_in users(:lee)
+    assert_difference('Status.count') do
+      post :create, status: { content: @status.content, user_id: users(:jim).id }
+    end
+
+    assert_redirected_to status_path(assigns(:status))
+    assert_equal assigns(:status).user_id, users(:lee).id
   end
 
   test "should show status" do
